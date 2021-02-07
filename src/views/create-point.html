@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% set bodyId = "page-create-point" %}
+
+{% block title %}
+    <title>Criar um ponto de coleta</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/create-point.css">
+    <link rel="stylesheet" href="./styles/map.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+    <form action="/save-point" method="POST" enctype="multipart/form-data">
+        <h1>Cadastro do ponto de coleta</h1>
+
+        <fieldset>
+            <legend>
+                <h2>Dados da entidade</h2>
+            </legend>
+
+            <div class="field">
+                <div class="text">
+                    <label for="image">Imagem da Entidade</label>
+                </div>
+                <div class="image">
+                    <input type="file" name="image" class="file" accept="image/*" required>
+                    <img id="img" src="" alt="">
+                    <div class="upload">
+                        <img src="./assets/picture.png" alt="Selecionar Imagem">
+                        <p>Selecione ou araste uma imagem</p>
+                    </div>
+                    <img src="./assets/lixeira.svg" alt="Deletar Imagem" id="delet">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="name">Nome da Entidade</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="whatsapp">Whatsapp</label>
+                    <input type="text" name="whats" onkeypress="mask(this, mphone);" required >
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="about">Sobre</label>
+                <textarea type="text" name="about" required></textarea>
+            </div>
+
+            <legend class="address">
+                <h2>Endereço</h2>
+            </legend>
+
+            <div class="map-container">
+                <div id="mapid">
+                    <input type="hidden" name="lat">
+                    <input type="hidden" name="lng">
+                </div>
+
+                <footer>
+                    <a id="select-point">
+                        Clique no mapa para adicionar a localização
+                    </a>
+                </footer>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="uf">Estado(UF)</label>
+                    <select name="uf" required>
+                        <option value="">Selecione o Estado</option>
+                    </select>
+
+                    <input type="hidden" name="state">
+                </div>
+                <div class="field">
+                    <label for="city">Cidade</label>
+                    <select name="city" id="" disabled >
+                        <option value="">Selecione a Cidade</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Itens de Coleta</h2>
+                <span>Selecione um ou mais itens abaixo</span>
+            </legend>
+
+            <div class="items-grid">
+                <li data-id="Lâmpadas">
+                    <img src="./assets/lampadas.svg" alt="Lâmpadas">
+                    <span>Lâmpadas</span>
+                </li>
+
+                <li data-id="Pilhas e Baterias">
+                    <img src="./assets/baterias.svg" alt="Pilhas e Baterias">
+                    <span>Pilhas e Baterias</span>
+                </li>
+
+                <li data-id="Papéis e Papelão">
+                    <img src="./assets/papeis-papelao.svg" alt="Papéis e Papelão">
+                    <span>Papéis e Papelão</span>
+                </li>
+
+                <li data-id="Resíduos Eletrônicos">
+                    <img src="./assets/eletronicos.svg" alt="Resíduos Eletrônicos">
+                    <span>Resíduos Eletrônicos</span>
+                </li>
+
+                <li data-id="Resíduos Orgânicos">
+                    <img src="./assets/organicos.svg" alt="Resíduos Orgânicos">
+                    <span>Resíduos Orgânicos</span>
+                </li>
+
+                <li data-id="Óleo de Cozinha">
+                    <img src="./assets/oleo.svg" alt="Óleo de Cozinha">
+                    <span>Óleo de Cozinha</span>
+                </li>
+            </div>
+
+            <input type="hidden" name="items">
+        </fieldset>
+
+        <button type="submit">Cadastrar ponto de coleta</button>
+    </form>
+{% endblock content %}
+
+{% block modal %}
+    {% if saved %}
+        {% include "partials/point-created.html" %}
+    {% endif %}
+
+    {% if error %}
+        {% include "partials/point-error.html" %}
+    {% endif %}
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="./scripts/create-point.js"></script>
+    <script src="./scripts/dark-mode.js"></script>
+{% endblock scripts %}

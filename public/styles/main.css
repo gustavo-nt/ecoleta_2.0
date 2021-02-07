@@ -1,0 +1,44 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --title-color: #322153;
+    --primary-color: #34cb79;
+    --dark-color: #000000;
+    --bg: #f0f0f5;
+    --form: white;
+    --input: #f0f0f5;
+    --span: #322153;
+    --li-selected: #e1faec;
+    --bg-results: white;
+    --text-results: #6c6c80;
+    --light: #ffffff;
+    --select-image: #aaaaaa;
+    --info-map: #322153;
+    --back-aside: linear-gradient(329.54deg, #34cb79 0%, #adc 100%);
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--bg);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--title-color);
+}
+
+.hd {
+    display: none !important;
+}

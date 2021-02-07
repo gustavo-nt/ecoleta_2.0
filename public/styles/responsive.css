@@ -1,0 +1,464 @@
+/* Settings for Responsiveness */
+@media (max-width: 1000px) {
+    /* Settings Page Home */
+    #page-home {
+        background-position-x: 75vw;
+    }
+
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a{
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #page-home main {
+        align-items: center;
+        margin-top: -85px;
+    }
+
+    #page-home main h1 {
+        font-size: 45px;
+    }
+
+    #page-home main p {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+
+    #page-home main a {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    /* Settings Page Search Results */   
+    aside h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 750px) {
+    /* Settings Page Create Point */
+    #page-create-point .field-group {
+        flex-direction: column;
+    }
+
+    #page-create-point .field-group .field + .field {
+        margin-left: 0;
+    }
+
+    #page-create-point form {
+        margin: 60px auto;
+        padding: 55px;
+    }
+
+    #page-create-point form fieldset {
+        margin-top: 45px;
+    }
+
+    #page-create-point form legend {
+        margin-bottom: 25px;
+    }
+
+    /* Settings Page Place */ 
+    #page-point .container {
+        margin: 60px auto;
+    }
+
+    #page-point .container .content {
+        padding: 0 55px;
+    }
+}
+
+@media (max-width: 650px) {
+    /* Settings Page Home */
+    #page-home header a span {
+        margin-right: 8px;
+    }
+
+    #page-home main {
+        max-width: 530px;
+        align-items: center;
+        margin-top: -85px;
+    }
+
+    #page-home main h1 {
+        font-size: 35px;
+    }
+
+    #page-home main p {
+        font-size: 17px;
+        line-height: 25px;
+        margin-top: 15px;
+    }
+
+    #page-home main a {
+        max-width: 310px;
+        height: 65px;
+        margin-top: 25px;
+    }
+
+    #page-home main a span{
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Modal - Home */
+    #modal .content .header {
+        margin-bottom: 30px;
+    }
+
+    #modal .content .header h1 {
+        font-size: 32px;
+    }
+
+    /* Settings Page Create Point */
+    #page-create-point header {
+        margin-top: 30px;
+    }
+
+    #page-create-point form {
+        margin: 40px auto;
+        padding: 45px;
+    }
+
+    #page-create-point form h1 {
+        font-size: 30px;
+    }
+
+    #page-create-point form fieldset {
+        margin-top: 30px;
+    }
+
+    #page-create-point form legend {
+        margin-bottom: 20px;
+    }
+
+    .items-grid {
+        grid-template-columns: 2fr 2fr;
+    }
+
+    form button {
+        margin: 30px auto 0 auto;
+    }
+
+    /* Settings Page Place */
+    aside {
+        position: fixed;
+        flex-direction: row;
+        width: 100%;
+        height: 180px;
+        z-index: 10;
+        padding: 50px;
+    }
+
+    aside header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    aside img {
+        height: auto;
+        width: 40px;
+    }
+
+    aside h2 {
+        text-align: center;
+        margin-top: 10px;
+        max-width: 315px;
+        font-size: 21px;
+    }
+
+    aside p {
+       text-align: center;
+       font-size: 15px;
+       margin-top: 10px;
+    }
+
+    aside footer {
+        display: none;
+    }
+
+    .page-places .leaflet-top {
+        top: auto;
+        bottom: 12px;
+    }
+
+    /* Settings Page Place */ 
+    #page-point .container {
+        margin: 40px auto;
+    }
+
+    #page-point .container:last-child {
+        padding-bottom: 40px;
+    }
+
+    #page-point .container .content {
+        padding: 0 45px;
+        margin-top: 30px;
+    }
+
+    #page-point .container .content h1 {
+        font-size: 30px;
+    }
+
+    #page-point .container .content .edit {
+        margin-bottom: 22px;
+    }
+
+    #page-point .container .content .hint-content {
+        display: none;
+    }
+
+    #page-point .container .content .address {
+        right: 63px;
+        top: 76px;
+    }
+
+    #page-point .container .contact {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 580px) {
+    /* Settings Page Create Point */
+    form legend {
+        display: block;
+    }
+
+    form legend h2 {
+        margin-bottom: 5px;
+    }
+
+    form button {
+        width: 220px;
+        height: 55px;
+        font-size: 15px;
+    }
+
+    form #mapid {
+        height: 240px;
+    }
+
+    .container #mapid {
+        height: 240px;
+    }
+
+    .map-container footer a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 430px) {
+    /* Settings Page Home */
+    #page-home header a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 25px;
+        width: 100%;
+    }
+
+    #page-home header a span {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    /* Settings Modal */
+    #modal .content {
+        width: 340px;
+    }
+
+    #modal form a {
+        height: 65px;
+    }
+
+    /* Settings Page Create Point */
+    #page-create-point header {
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    #page-create-point header a{
+        margin-top: 20px;
+    }
+
+    #page-create-point form {
+        margin: 30px auto;
+        padding: 30px;
+    }
+
+    #page-create-point form input,
+    #page-create-point form select {
+        padding: 16px 16px;
+    }
+
+    #page-create-point form h1 {
+        font-size: 24px;
+    }
+
+    #page-create-point form fieldset {
+        margin-top: 25px;
+    }
+
+    #page-create-point form legend {
+        margin-bottom: 15px;
+    }
+
+    #page-create-point form legend h2 {
+        font-size: 19px;
+    }
+
+    .items-grid {
+        grid-template-columns: 2fr;
+    }
+
+    /* Settings Page Place */ 
+    #page-point header {
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    #page-point header a{
+        margin-top: 20px;
+    }
+
+    #page-point .container {
+        margin: 30px auto;
+    }
+
+    #page-point .container:last-child {
+        padding-bottom: 30px;
+    }
+
+    #page-point .container .content {
+        padding: 0 30px;
+    }
+
+    #page-point .container .content h1 {
+        font-size: 26px;
+    }
+
+    #page-point .container .content .edit {
+        margin-bottom: 26px;
+    }
+
+    #page-point .container .content .address {
+        right: 43px;
+        top: 69px;
+    }
+
+    #page-point .title {
+        margin-bottom: 26px;
+    }
+
+    #page-point .container h2 {
+        font-size: 26px;
+    }
+
+    #page-point .container .description {
+        margin-bottom: 30px;
+    }
+
+    #page-point .container .contact {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    /* Settings Page Home */
+    #page-home main h1 {
+        font-size: 29px;
+    }
+
+    /* Settings Modal */
+    #modal .content {
+        width: 240px;
+    }
+    
+    #modal .content .header {
+        margin-bottom: 10px;
+    }
+
+    #modal .content .header h1 {
+        font-size: 23px;
+    }
+
+    #modal form label {
+        margin-bottom: 10px;
+    }
+
+    #modal form input {
+        padding: 15px 15px;
+        font-size: 15px;
+        max-width: 185px;
+    }
+
+    #modal form a {
+        height: 55px;
+    }
+
+    /* Settings Page Create Point */
+    #page-create-point form {
+        padding: 20px;
+    }
+
+    #page-create-point form input,
+    #page-create-point form select {
+        font-size: 15px;
+    }
+
+    form button {
+        width: 210px;
+    }
+
+    /* Settings Page Place */ 
+    #page-point .container .content {
+        padding: 0 20px;
+    }
+
+    #page-point .container .content .edit {
+        margin-bottom: 29px;
+    }
+
+    #page-point .container .content .address {
+        right: 30px;
+        top: 69px;
+    }
+
+    #page-point .title {
+        margin-bottom: 22px;
+    }
+
+    #page-point .container h2 {
+        font-size: 24px;
+    }
+
+    #page-point .container .description {
+        margin-bottom: 26px;
+    }
+}
+
+@media (min-width: 1700px) {
+    /* Settings Page Home */
+    #page-home {
+        background-position-x: 40vw;
+    }
+}
+
+@media (max-height: 760px) {
+    /* Settings Page Home */
+    #page-home {
+        background-position-y: 200px;
+    }
+}

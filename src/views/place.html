@@ -1,0 +1,218 @@
+{% extends "layout.html" %}
+
+{% set bodyId = "page-point" %}
+
+{% block title %}
+    <title>{{ place.name }} | Ecoleta</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/place.css">
+    <link rel="stylesheet" href="./styles/map.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+{% endblock styles %}
+
+{% block content %}
+    <header>
+        <img class="logo" src="./assets/logo.svg" alt="Logomarca">
+        <a>
+            <span></span>
+            Voltar para pesquisa
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="img-profile">
+            <img id="img" src="./assets/uploads/{{ place.image }}" alt="">
+        </div>
+
+       
+        <div class="content">
+            <div class="name-edit">
+                <div class="name">
+                    <h1>{{ place.name }}</h1>
+                </div>
+
+                <div class="hint" data-position="4">
+                    <div class="edit">
+                        <a href="/edit-search?search={{ search }}&id={{ place.id }}">
+                            <img src="./assets/pencil-tool.svg" alt="Clique para editar">
+                        </a>
+                    </div>
+                    <div class="hint-content do--split-children">
+                        <p>Clique aqui para editar os dados desse ponto de coleta!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="address">
+                <span>{{ place.city }} - {{ place.state }}</span>
+            </div>
+
+            <div class="map-container">
+                <div id="mapid"></div>
+
+                <span hidden
+                    data-lat="{{ place.lat }}"
+                    data-lng="{{ place.lng }}"
+                ></span>
+
+                <footer>
+                    <a id="select-point">
+                        <a target="_blank" href="https://maps.google.com/mobile?q={{ place.lat }},{{ place.lng }}&z=15">Ver rotas no Google Maps</a>
+                    </a>
+                </footer>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="title">
+                <h2>Itens de Coleta</h2>
+            </div>
+
+            <div class="description">
+                <p>
+                    {{ place.about }}
+                    <span> Abaixo, confira os items de coleta:</span>
+                </p>
+            </div>
+
+            <div class="items-grid">
+                <li class="disable" data-id="Lâmpadas">
+                    <img src="./assets/lampadas.svg" alt="Lâmpadas">
+                    <span>Lâmpadas</span>
+                </li>
+
+                <li class="disable" data-id="Pilhas e Baterias">
+                    <img src="./assets/baterias.svg" alt="Pilhas e Baterias">
+                    <span>Pilhas e Baterias</span>
+                </li>
+
+                <li class="disable" data-id="Papéis e Papelão">
+                    <img src="./assets/papeis-papelao.svg" alt="Papéis e Papelão">
+                    <span>Papéis e Papelão</span>
+                </li>
+
+                <li class="disable" data-id="Resíduos Eletrônicos">
+                    <img src="./assets/eletronicos.svg" alt="Resíduos Eletrônicos">
+                    <span>Resíduos Eletrônicos</span>
+                </li>
+
+                <li class="disable" data-id="Resíduos Orgânicos">
+                    <img src="./assets/organicos.svg" alt="Resíduos Orgânicos">
+                    <span>Resíduos Orgânicos</span>
+                </li>
+
+                <li class="disable" data-id="Óleo de Cozinha">
+                    <img src="./assets/oleo.svg" alt="Óleo de Cozinha">
+                    <span>Óleo de Cozinha</span>
+                </li>
+
+                <input type="hidden" name="items" value="{{ place.items }}">
+            </div>
+
+            <div class="contact">
+                <a target="_blank" href="https://api.whatsapp.com/send?l=pt_BR&phone={{ place.whats }}&text=Bem vindo ao Whatsapp {{ place.name }}, ficamos felizes pelo seu interesse em nos contactar. Logo te respondemos" class="primary-button" type="button">
+                    <img src="./assets/whats.svg" alt="Chamar no Whatsapp">
+                    Whatsapp
+                </a>
+    
+                <a target="_blank" href="mailto:{{ place.email }}?Subject: Assunto da mensagem&body=Conteúdo da mensagem" class="primary-button" type="button">
+                    <img src="./assets/email.svg" class="email" alt="Chamar no Email">
+                    Email
+                </a>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="./scripts/place.js"></script>
+    <script src="./scripts/dark-mode.js"></script>
+{% endblock scripts %}
+
+
+
+<!-- <div class="container">
+
+    <h1>Colectoria</h1>
+
+    <div class="content">
+        <div class="field">
+            <img id="img" src="./assets/uploads/005d799e304588ee33bff6d6874d523e-1012707.jpg" alt="">
+        </div>
+        
+        <div class="title address">
+            <h2>Endereço</h2>
+            <span>Taquara - RS</span>
+        </div>
+
+        <div class="map-container">
+            <div id="mapid"></div>
+
+            <span hidden
+                data-lat="-29.751064693928527"
+                data-lng="-50.83603553473951"
+            ></span>
+
+            <footer>
+                <a id="select-point">
+                    <a target="_blank" href="https://maps.google.com/mobile?q=-29.751064693928527,-50.83603553473951&z=15">Ver rotas no Google Maps</a>
+                </a>
+            </footer>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title">
+            <h2>Itens de Coleta</h2>
+        </div>
+
+        <div class="items-grid">
+            <li data-id="Lâmpadas">
+                <img src="./assets/lampadas.svg" alt="Lâmpadas">
+                <span>Lâmpadas</span>
+            </li>
+
+            <li data-id="Pilhas e Baterias">
+                <img src="./assets/baterias.svg" alt="Pilhas e Baterias">
+                <span>Pilhas e Baterias</span>
+            </li>
+
+            <li data-id="Papéis e Papelão">
+                <img src="./assets/papeis-papelao.svg" alt="Papéis e Papelão">
+                <span>Papéis e Papelão</span>
+            </li>
+
+            <li data-id="Resíduos Eletrônicos">
+                <img src="./assets/eletronicos.svg" alt="Resíduos Eletrônicos">
+                <span>Resíduos Eletrônicos</span>
+            </li>
+
+            <li data-id="Resíduos Orgânicos">
+                <img src="./assets/organicos.svg" alt="Resíduos Orgânicos">
+                <span>Resíduos Orgânicos</span>
+            </li>
+
+            <li data-id="Óleo de Cozinha">
+                <img src="./assets/oleo.svg" alt="Óleo de Cozinha">
+                <span>Óleo de Cozinha</span>
+            </li>
+        </div>
+
+        <div class="contact">
+            <a target="_blank" href="https://api.whatsapp.com/send?l=pt_BR&phone=5551995303883&text=Bem vindo ao Whatsapp Colectoria, ficamos felizes pelo seu interesse em nos contactar. Logo te respondemos" class="primary-button" type="button">
+                <img src="./assets/whats.svg" alt="Chamar no Whatsapp">
+                Whatsapp
+            </a>
+
+            <a target="_blank" href="mailto:nowhere@mozilla.org?Subject: Assunto da mensagem&body=Conteúdo da mensagem" class="primary-button" type="button">
+                <img src="./assets/email.svg" class="email" alt="Chamar no Email">
+                Email
+            </a>
+        </div>
+    </div>
+
+</div> -->

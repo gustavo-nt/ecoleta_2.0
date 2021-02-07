@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>Localize um Ponto de Coleta</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="stylesheet" href="./styles/places.css" />
+{% endblock styles %}
+
+{% block content %}
+    <div class="page-places">
+        <aside class="animate-right">
+            <header>
+                <a href="/">
+                    <img src="./assets/logomarca.svg" alt="Logomarca">
+                </a>
+                <h2>Escolha um ponto de coleta no mapa</h2>
+                <p>Colabore com a reciclagem do mundo :)</p>
+            </header>
+
+            <footer>
+                <strong>Taquara</strong>
+                <p>Rio Grande do Sul</p>
+            </footer>
+        </aside>
+
+        <div id="mapid" class="animate-appear"></div>
+
+        <div class="places">
+            
+            {% for place in places %}
+
+            <span hidden
+                data-id = "{{ place.id }}"
+                data-img = "./assets/uploads/{{ place.image }}"
+                data-name = "{{ place.name }}"
+                data-lat = "{{ place.lat }}"
+                data-lng = "{{ place.lng }}"
+                data-search = "{{ search }}"
+            ></span>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="./scripts/places.js"></script>
+    <script src="./scripts/dark-mode.js"></script>
+{% endblock scripts %}
