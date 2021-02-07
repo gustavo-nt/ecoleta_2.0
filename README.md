@@ -34,6 +34,7 @@
 
 - [x] Criação do Ponto de Coleta
 - [x] Upload de imagem do Ponto de Coleta
+- [x] Visualização geográfica do Ponto de Coleta
 - [x] Tema Light/Dark mode
 - [x] Detalhes da Ponto de Coleta
 - [x] Atualização do cadastro do Ponto de Coleta
