@@ -1,5 +1,5 @@
 <h4 align="center">
-  <img src="https://github.com/gustavo-nt/ecoleta_1.0/blob/master/public/assets/logo.svg" alt="logo" height="65"/>
+  <img src="https://github.com/gustavo-nt/ecoleta_1.0/blob/master/public/assets/logomarca.svg" alt="logo" height="65"/>
   <br><br>
   ♻️ Seu marketplace de coleta de resíduos ♻️
 </h4>
