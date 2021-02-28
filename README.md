@@ -61,9 +61,6 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 # Clone este repositório
 $ git clone https://github.com/gustavo-nt/ecoleta_2.0
 
-# Navegue para a pasta
-$ cd nlw_2.0
-
 # Instale as dependências
 $ npm
 
